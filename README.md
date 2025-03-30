@@ -13,52 +13,45 @@ To compute the *Average Codeword Length, Entropy, Efficiency, Redundancy, and Va
 - *NumPy & Matplotlib*: Libraries for numerical operations and high-quality visualizations, essential for demonstrating sampling.  
 
 ---
-
-## *PROGRAM:*  
-python
+## Program
+```python
 import numpy as np
 import math
 
-L = 0  # Average Codeword Length
-hs = 0  # Entropy
-p = []  # Probability list
-lk = []  # Codeword length list
-
+L = 0
+hs = 0
+p = []
+lk = []
 n = int(input("Enter the number of samples: "))
 
 for i in range(n):
-    pr = float(input(f"Enter the probability of sample {i + 1}: "))  
+    pr = float(input(f"Enter the probability of sample value {i + 1}: "))  
     p.append(pr)
 
 for j in range(n):
-    l = float(input(f"Enter the length of the sample {j + 1}: "))  
+    l = float(input(f"Enter the length of the sample value {j + 1}: "))  
     lk.append(l)
 
-# Compute Average Codeword Length
 for k in range(n):
     L += p[k] * lk[k]
 
-# Compute Entropy
 for k in range(n):
-    hs += p[k] * math.log2(1 / p[k])
+    hs += p[k] * math.log(1 / p[k], 2)
 hs = round(hs, 3)
 
-# Compute Efficiency and Redundancy
 eff = round(hs / L, 3)
 red = round(1 - eff, 3)
 
-# Compute Variance
-var = 0
-for k in range(n):
-    var += p[k] * (lk[k] - L) ** 2
-var = round(var, 3)
+var = sum(p[k] * (lk[k] - L) ** 2 for k in range(n))
+    var = round(var, 3)
 
-print()
+print("\nResults:")
 print(f"Average Codeword Length: {L}")
 print(f"Entropy: {hs}")
 print(f"Efficiency: {eff * 100} %")
 print(f"Redundancy: {red}")
 print(f"Variance: {var}")
+```
 
 
 ---
