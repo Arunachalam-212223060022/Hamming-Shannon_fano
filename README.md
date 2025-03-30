@@ -63,8 +63,10 @@ print(f"Variance: {var}")
 
 ## *CALCULATIONS:*  
 ![calculation](![image](https://github.com/user-attachments/assets/697c31ff-74c8-4ca0-95b0-8956f9625fd4)
+
 )  
 ![calculations2](![image](https://github.com/user-attachments/assets/664e84c0-b49f-4f6b-b4ee-c3fbdefbfd5a)
+
 ) 
 ![calculations3](![image](https://github.com/user-attachments/assets/fa5d149b-dde1-438d-8c3c-243ebdcb6179)
 
